@@ -43,7 +43,7 @@ public class BinarySearchTree {
             return;
         }
         inorder(node.left);
-        System.out.println(node.data);
+        System.out.print(node.data + " ");
         inorder(node.right);
     }
 
@@ -53,8 +53,17 @@ public class BinarySearchTree {
         }
         postorder(node.left);
         postorder(node.right);
-        System.out.println(node.data);
+        System.out.print(node.data + " ");
 
+    }
+
+    public void preorder(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.data + " ");
+        preorder(node.left);
+        preorder(node.right);
     }
 
     public static void main(String[] args) {
@@ -66,7 +75,9 @@ public class BinarySearchTree {
         BST.addElements(1);
         BST.addElements(2);
         BST.inorder(BST.root);
+        System.out.println();
         BST.postorder(BST.root);
-
+        System.out.println();
+        BST.preorder(BST.root);
     }
 }
